@@ -1,0 +1,10 @@
+A embedding vector is a matrix with vectorsenting each word. Can be trained from a vocab list, or the weights can be loaded.
+Embedding output shape: (lines of data (shown as None), number of words, number of features for each)
+output_dim: 
+
+LSTM can be used for time series (what we need it for), and sequence classification (sentiment analysis).
+LSTM output shape: (lines of data (shown as None), number of "units")
+
+Models have weights made up of the weights of the layers
+
+one_hot integer encodes the words in a text, filtering out punctuation so the hash of 'done!' is the same as 'done'

@@ -6,6 +6,7 @@ from keras.layers import LSTM
 from keras.layers.embeddings import Embedding
 from keras.preprocessing import sequence
 
+
 np.random.seed(7)
 
 top_words = 5000 #the top frequent words to keep, replace others with oov_char
@@ -26,3 +27,5 @@ model.add(Embedding(top_words, 100)) #input_length is only necessary if being pa
 model.add(LSTM(128))
 model.add(Dense(1, activation='sigmoid'))
 print model.summary()
+model.compile(loss='mean_squared_error', optimizer='adam')
+model.fit(trainX, trainY, epochs=100, batch_size=1, verbose=2)
