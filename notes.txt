@@ -1,10 +1,27 @@
+Sequential
+Created by passing list of layers to constructor
+
+Input
+A Keras tensor
+shape=(input_dim,)
+
+Embedding
 A embedding vector is a matrix with vectorsenting each word. Can be trained from a vocab list, or the weights can be loaded.
 Embedding output shape: (lines of data (shown as None), number of words, number of features for each)
 output_dim: 
 
+LSTM
 LSTM can be used for time series (what we need it for), and sequence classification (sentiment analysis).
 LSTM output shape: (lines of data (shown as None), number of "units")
+"units" = output dim
+Each row of input is one timestep in LSTM
+The LTSM class has defines a call() with inputs as a parameter, that isn't __call__(). It takes inputs as a paramete, but also has other optional parameters.
+Inherits from RNN
 
+Model
 Models have weights made up of the weights of the layers
 
+
 one_hot integer encodes the words in a text, filtering out punctuation so the hash of 'done!' is the same as 'done'
+
+batch_shape=(lines of (shown as None), dimension of features)
